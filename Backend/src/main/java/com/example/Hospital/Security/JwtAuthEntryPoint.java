@@ -19,7 +19,7 @@ public class JwtAuthEntryPoint implements AuthenticationEntryPoint{
     
      @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException authException) throws IOException, ServletException {
-        //response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Credenciales erroneas");
+
 
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
