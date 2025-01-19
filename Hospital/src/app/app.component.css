@@ -1,0 +1,42 @@
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+a.title {
+    color: white;
+    display: center;
+}
+
+
+div .logo {
+    max-width: 4%;
+    max-height: 4%;
+    object-fit: contain; /* Ajusta la imagen sin distorsionarla */
+}
+
+
+div ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+div li {
+    display: inline; /* Hace que los ítems del menú estén en una línea horizontal */
+    margin-right: 20px; /* Espacio entre los ítems del menú */
+}
+
+div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+div a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+

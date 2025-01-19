@@ -1,0 +1,23 @@
+/* Asegúrate de que el body ocupe toda la altura de la ventana */
+body, html {
+    height: 100%; /* Ocupa toda la altura */
+    margin: 0; /* Elimina el margen por defecto */
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Coloca el contenido en columna */
+  }
+  
+  /* Contenedor principal que ocupa el resto del espacio */
+  .main-content {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+    padding: 20px; /* Puedes agregar algo de padding para espaciar el contenido */
+    background-color: #f0f0f0; /* Fondo opcional */
+  }
+  
+  /* Estilos para el footer */
+  footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+    padding: 10px 0; /* Espaciado dentro del footer */
+    font-size: 14px; /* Tamaño de la fuente */
+  }

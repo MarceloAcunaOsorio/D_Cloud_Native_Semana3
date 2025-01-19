@@ -1,0 +1,53 @@
+<header>
+  <mat-toolbar color="primary">
+
+
+    <div class="" cdkMenu>
+      <ul>
+        <li><a class=""><img src="imagen1.jpg" class="logo" alt="Logo"></a></li>
+        <li><a class="" cdkMenuItem>Home</a></li>
+        <li><a class="" cdkMenuItem>especialidades</a></li>
+        <li><a class="" cdkMenuItem>seguros y convenios</a></li>
+        <li><a class="" cdkMenuItem>contacto</a></li>
+      </ul>
+    </div>
+
+
+    <div class="toolbar-spacer"></div>
+
+    @if (loginDisplay) {
+    <a mat-button [routerLink]="['profile']">Perfil</a>
+    }
+
+    @if (!loginDisplay) {
+    <button mat-raised-button [matMenuTriggerFor]="loginMenu">Iniciar Sesion</button>
+    }
+    <mat-menu #loginMenu="matMenu">
+      <button mat-menu-item (click)="loginPopup()">Login usando Popup</button>
+    </mat-menu>
+
+    @if (loginDisplay) {
+    <button mat-raised-button [matMenuTriggerFor]="logoutMenu">Cerrar Sesion</button>
+    }
+    <mat-menu #logoutMenu="matMenu">
+      <button mat-menu-item (click)="logout(true)">Cerrar Sesion usando Popup</button>
+    </mat-menu>
+
+  </mat-toolbar>
+  <div class="container">
+    <!--This is to avoid reload during acquireTokenSilent() because of hidden iframe -->
+    @if (!isIframe) {
+    <router-outlet></router-outlet>
+    }
+  </div>
+
+</header>
+
+<body>
+  @if (!loginDisplay) {
+  <app-carrusel></app-carrusel>
+  }
+</body>
+<footer>
+  <app-footer></app-footer>
+</footer>
