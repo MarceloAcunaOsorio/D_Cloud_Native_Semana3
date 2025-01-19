@@ -1,23 +1,21 @@
-FROM eclipse-temurin:22-jdk AS buildstage 
- 
-RUN apt-get update && apt-get install -y maven
 
+# Dockerfile
+FROM openjdk:21-jdk-slim
+
+#directorio de trabajo
 WORKDIR /app
 
-COPY pom.xml .
-COPY src /app/src
+# Aqui debemos asegurarnos del nombre de nuestro jar coincida
+COPY target/bff-0.0.1-SNAPSHOT.jar app.jar
 
+# Ubicacion y nombre del wallet descomprimido
+COPY ./Wallet_QMX8X1I4LTY0NIR1 /app/Wallet_tienda
 
-RUN mvn clean package
-
-FROM eclipse-temurin:22-jdk 
-
-COPY --from=buildstage /app/target/bff-0.0.1-SNAPSHOT.jar /app/bff.jar
-
-
-
+#PUERTO
 EXPOSE 8080
 
-ENTRYPOINT [ "java", "-jar","/app/bff.jar" ]
+CMD ["java", "-jar", "app.jar"]
+
+
 
 
