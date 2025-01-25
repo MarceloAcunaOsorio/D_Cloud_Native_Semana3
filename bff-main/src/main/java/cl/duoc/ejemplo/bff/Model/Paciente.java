@@ -18,26 +18,65 @@ public class Paciente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="IdPaciente")
     private Long idPaciente;
-
+    
+    @Column(name ="Nombre")
     private String nombre;
+
+    @Column(name ="Apellido")
     private String apellido;
+
+    @Column(name ="edad")
     private int edad;
+
+    @Column(name ="Habitacion")
     private String habitacion;
+
+    @Column(name ="FrecuenciaCardiaca")
     private double frecuenciaCardiaca;
+
+    @Column(name ="Oxigeno")
     private double oxigeno;
+
+    @Column(name ="Presionsistolica")
     private double presionSistolica;
+
+    @Column(name ="PresionDiastolica")
     private double presionDiastolica;
+
+    @Column(name ="PresionArterial")
     private double presionArterial;
+
+    @Column(name ="Temperatura")
     private double temperatura;
+
+    @Column(name ="Condicion")
     private String condicion;
+
+    @Column(name ="UltimoControl")
     private LocalDateTime ultimoControl;
+
+    @Column(name ="Observaciones")
     private String observaciones;
+
+    @Column(name ="HistorialMedico")
     private List<String> historialMedico;
+
+    @Column(name ="UltimaActualizacion")
     private LocalDateTime ultimaActualizacion;
+
+    @Column(name ="HistorialPresion")
     private List<Double> historialPresion;
+
+    @Column(name ="HistorialFrecuencia")
     private List<Double> historialFrecuencia;
+   
+    @Column(name ="EvolucionCondicion")
     private List<String> evolucionCondicion;
+
+    @Column(name ="Medicamentos")
     private List<String> medicamentos;
+
+    @Column(name ="UltimosControles")
     private List<LocalDateTime> ultimosControles;
 
     public Paciente() {}
